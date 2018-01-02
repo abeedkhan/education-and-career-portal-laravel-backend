@@ -1,0 +1,326 @@
+# Run these from the ecp-backend directory in Windows PowerShell
+
+# Set remote once
+git init
+git remote add origin https://github.com/abeedkhan/education-and-career-portal-laravel-backend.git
+git branch -M main
+
+# Step 1
+Copy-Item -Path ".\steps\1\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-02 10:15:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-02 10:15:00 +0600'
+git commit -m "chore: init base metadata and empty web routes"
+git push -u origin main
+
+# Step 2
+Copy-Item -Path ".\steps\2\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-04 16:40:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-04 16:40:00 +0600'
+git commit -m "chore: add bootstrap and config"
+git push
+
+# Step 3
+Copy-Item -Path ".\steps\3\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-07 12:18:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-07 12:18:00 +0600'
+git commit -m "feat(core): providers, exceptions, console + http kernel"
+git push
+
+# Step 4
+Copy-Item -Path ".\steps\4\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-10 09:52:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-10 09:52:00 +0600'
+git commit -m "feat(ui): base views, assets, i18n scaffolding"
+git push
+
+# Step 5
+Copy-Item -Path ".\steps\5\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-14 14:23:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-14 14:23:00 +0600'
+git commit -m "feat(db): add migrations, factories, seeders"
+git push
+
+# Step 6
+Copy-Item -Path ".\steps\6\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-15 18:05:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-15 18:05:00 +0600'
+git commit -m "chore(routes): add api, channels, console (web later)"
+git push
+
+# Step 7
+Copy-Item -Path ".\steps\7\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-19 11:07:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-19 11:07:00 +0600'
+git commit -m "work: bring in more app code"
+git push
+
+# Step 8
+Copy-Item -Path ".\steps\8\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-20 19:44:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-20 19:44:00 +0600'
+git commit -m "work: assets and app updates"
+git push
+
+# Step 9
+Copy-Item -Path ".\steps\9\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-24 10:33:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-24 10:33:00 +0600'
+git commit -m "work: models and helpers"
+git push
+
+# Step 10
+Copy-Item -Path ".\steps\10\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-29 21:16:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-29 21:16:00 +0600'
+git commit -m "refactor: small cleanups"
+git push
+
+# Step 11
+Copy-Item -Path ".\steps\11\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-01-30 09:28:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-01-30 09:28:00 +0600'
+git commit -m "feat: add a few features"
+git push
+
+# Step 12
+Copy-Item -Path ".\steps\12\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-02 15:42:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-02 15:42:00 +0600'
+git commit -m "fix: minor issues"
+git push
+
+# Step 13
+Copy-Item -Path ".\steps\13\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-05 11:31:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-05 11:31:00 +0600'
+git commit -m "work: batch updates"
+git push
+
+# Step 14
+Copy-Item -Path ".\steps\14\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-09 17:26:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-09 17:26:00 +0600'
+git commit -m "work: more app files"
+git push
+
+# Step 15
+Copy-Item -Path ".\steps\15\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-12 10:09:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-12 10:09:00 +0600'
+git commit -m "chore: tweak configs"
+git push
+
+# Step 16
+Copy-Item -Path ".\steps\16\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-15 16:54:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-15 16:54:00 +0600'
+git commit -m "work: assets update"
+git push
+
+# Step 17
+Copy-Item -Path ".\steps\17\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-18 09:47:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-18 09:47:00 +0600'
+git commit -m "feat: add modules"
+git push
+
+# Step 18
+Copy-Item -Path ".\steps\18\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-20 20:33:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-20 20:33:00 +0600'
+git commit -m "work: code additions"
+git push
+
+# Step 19
+Copy-Item -Path ".\steps\19\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-24 13:22:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-24 13:22:00 +0600'
+git commit -m "refactor: tidy up"
+git push
+
+# Step 20
+Copy-Item -Path ".\steps\20\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-25 18:11:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-25 18:11:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 21
+Copy-Item -Path ".\steps\21\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-02-28 10:05:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-02-28 10:05:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 22
+Copy-Item -Path ".\steps\22\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-02 19:36:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-02 19:36:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 23
+Copy-Item -Path ".\steps\23\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-05 08:59:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-05 08:59:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 24
+Copy-Item -Path ".\steps\24\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-06 21:14:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-06 21:14:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 25
+Copy-Item -Path ".\steps\25\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-09 12:07:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-09 12:07:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 26
+Copy-Item -Path ".\steps\26\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-12 17:48:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-12 17:48:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 27
+Copy-Item -Path ".\steps\27\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-15 09:26:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-15 09:26:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 28
+Copy-Item -Path ".\steps\28\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-19 14:35:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-19 14:35:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 29
+Copy-Item -Path ".\steps\29\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-21 11:02:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-21 11:02:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 30
+Copy-Item -Path ".\steps\30\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-24 16:46:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-24 16:46:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 31
+Copy-Item -Path ".\steps\31\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-25 10:22:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-25 10:22:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 32
+Copy-Item -Path ".\steps\32\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-28 18:30:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-28 18:30:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 33
+Copy-Item -Path ".\steps\33\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-03-30 09:58:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-03-30 09:58:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 34
+Copy-Item -Path ".\steps\34\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-01 15:45:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-01 15:45:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 35
+Copy-Item -Path ".\steps\35\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-04 11:29:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-04 11:29:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 36
+Copy-Item -Path ".\steps\36\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-06 20:12:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-06 20:12:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 37
+Copy-Item -Path ".\steps\37\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-09 13:37:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-09 13:37:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 38
+Copy-Item -Path ".\steps\38\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-12 17:21:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-12 17:21:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 39
+Copy-Item -Path ".\steps\39\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-16 10:48:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-16 10:48:00 +0600'
+git commit -m "work: step"
+git push
+
+# Step 40
+Copy-Item -Path ".\steps\40\*" -Destination "." -Recurse -Force
+git add -A
+$env:GIT_AUTHOR_DATE = '2018-04-19 19:05:00 +0600'
+$env:GIT_COMMITTER_DATE = '2018-04-19 19:05:00 +0600'
+git commit -m "feat: controllers + real web routes and final sync"
+git push
