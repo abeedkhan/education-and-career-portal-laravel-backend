@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="public/favicon.ico" width="64" height="64" alt="App Icon" />
-</p>
+
 
 ### Education & Career Portal (Laravel 5.8)
 
