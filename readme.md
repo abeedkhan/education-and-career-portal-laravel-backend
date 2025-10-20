@@ -1,71 +1,137 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+  <img src="public/favicon.ico" width="64" height="64" alt="App Icon" />
 </p>
 
-## About Laravel
+### Education & Career Portal (Laravel 5.8)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a Laravel 5.8 application powering an Education & Career portal. It organizes institute information and related content such as departments, courses, jobs, notices, files, and alumni. The project also includes a suggestion module for marketplace-like data structures (buyers, sellers, products, transactions) used for demonstrations and internal tooling.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tech stack
+- **Framework**: Laravel 5.8 (`laravel/framework: 5.8.*`)
+- **PHP**: ^7.1.3
+- **Auth**: Laravel UI auth scaffolding (`Auth::routes()`)
+- **Images**: `intervention/image`
+- **Frontend tooling**: Laravel Mix (Webpack), Node/NPM
+- **Database**: MySQL (via Eloquent ORM and migrations)
 
-## Learning Laravel
+### Key modules (from `app/`)
+- **Institutions**: `Varsity`, `SchoolCollege`, `TrainingCenter`, `InstituteType`
+- **Academics**: `Department`, `Course`, `Type`, `Language`
+- **Content**: `Content`, `Notice`, `File`, `FileType`
+- **People**: `Alumni`, `User`
+- **Geo**: `Division`, `District`
+- **Careers**: `Career`, `Job`
+- **Suggestion sandbox** (`sugestion/`): `Buyer`, `Seller`, `Product`, `Transaction`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Routing
+Core routes are defined in `routes/web.php`:
+- `/` → `Pages\HomePageController@index`
+- Auth routes via `Auth::routes()`
+- `/home` → `HomeController@index`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### Requirements
+- PHP 7.1.3+
+- Composer
+- MySQL (or compatible)
+- Node.js 10+ and NPM (for asset build)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Getting started (local)
+1) Clone the repository
+```bash
+git clone <your-repo-url>
+cd ecp-main
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+2) Install PHP dependencies
+```bash
+composer install
+```
 
-## Contributing
+3) Configure environment
+- If `.env` doesn’t exist, create it. This repo includes a sample `- Copy.env`; you can duplicate it or use the standard example:
+```bash
+copy "- Copy.env" .env   # Windows PowerShell/CMD
+# or
+cp "- Copy.env" .env     # Git Bash
+```
+- Set database credentials and `APP_URL` in `.env`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4) Generate app key
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+5) Run migrations (and seeds if available)
+```bash
+php artisan migrate
+# php artisan db:seed    # optional, if seeders are configured
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6) Storage symlink (if your features serve files from storage)
+```bash
+php artisan storage:link
+```
 
-## License
+7) Install and build frontend assets
+```bash
+npm install
+npm run dev   # or: npm run prod
+```
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8) Serve the application
+```bash
+php artisan serve
+# Visit: http://127.0.0.1:8000/
+```
+
+---
+
+### Project structure highlights
+- `app/` — Eloquent models and application classes for modules listed above
+- `routes/web.php` — web routes and auth endpoints
+- `database/migrations/` — schema migrations for core entities
+- `resources/views/` — Blade templates for pages
+- `public/` — public assets (favicon, images, compiled CSS/JS)
+- `sugestion/` — example marketplace-style domain used for demos/tests
+
+### Notable packages
+- `intervention/image` — image manipulation for uploads/thumbnails
+
+---
+
+### Development tips
+- Ensure your local PHP version matches `^7.1.3` to avoid dependency conflicts.
+- If you are on XAMPP, point the Apache document root to this folder’s `public/` directory.
+- Run `composer dump-autoload` after adding new classes under `app/` or `sugestion/`.
+
+### Testing
+```bash
+php artisan test
+# or for older Laravel test runner
+./vendor/bin/phpunit
+```
+
+---
+
+### Deployment notes
+- Set `APP_ENV=production` and `APP_DEBUG=false` in `.env`.
+- Run database migrations during deploy: `php artisan migrate --force`.
+- Build production assets: `npm ci && npm run prod`.
+- Configure the web server to serve from `public/`.
+
+### Security
+If you discover a security issue, please open a private issue or contact the maintainer. Do not disclose publicly until a fix is released.
+
+### License
+The underlying framework (Laravel) is MIT licensed. Project code licensing is unspecified in this repository; please add a `LICENSE` file if you intend to open-source it.
+
+---
+
+### Maintainer notes
+- Laravel: 5.8.x (from `composer.json`)
+- PHP: ^7.1.3
+- First-run scripts available via Composer will generate an app key if `.env` exists.
